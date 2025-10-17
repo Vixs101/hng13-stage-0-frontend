@@ -72,8 +72,8 @@ You need a modern web browser to view the project.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [YOUR-REPO-LINK]
-    cd profile-card-component
+    git clone [[YOUR-REPO-LINK]](https://github.com/Vixs101/hng13-stage-0-frontend)
+    cd hng13-stage-0-frontend
     ```
 2.  **Open `index.html`:**
     Simply open the `index.html` file in your preferred web browser. Alternatively, use a local development server extension (like *Live Server* in VS Code) for best results.
