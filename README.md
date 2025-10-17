@@ -22,10 +22,8 @@ The project follows a standard structure:
 
 .
 ├── index.html          \# The main HTML file containing the Profile Card component.
-├── style.css           \# The CSS file for styling and responsive layout.
+├── index.css           \# The CSS file for styling and responsive layout.
 ├── script.js           \# The vanilla JavaScript file for behavior (e.g., updating the time).
-├── assets/
-│   └── avatar.jpg      \# Placeholder image for the user avatar.
 └── README.md
 
 ````
