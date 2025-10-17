@@ -72,7 +72,7 @@ You need a modern web browser to view the project.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [[YOUR-REPO-LINK]](https://github.com/Vixs101/hng13-stage-0-frontend)
+    git clone https://github.com/Vixs101/hng13-stage-0-frontend
     cd hng13-stage-0-frontend
     ```
 2.  **Open `index.html`:**
