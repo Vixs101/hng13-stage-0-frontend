@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>My Profile Card</title>
+  </head>
+  <body>
+    <main class="page">
+      <article
+        class="profile-card"
+        data-testid="test-profile-card"
+        aria-labelledby="user-name"
+      >
+        <header class="profile-header">
+          <figure class="avatar" aria-hidden="false">
+            <img
+              src="https://i.imghippo.com/files/UtqG1400tE.jpg"
+              alt="Elijah Victor — avatar"
+              data-testid="test-user-avatar"
+              width="200"
+              height="200"
+            />
+            <figcaption class="sr-only">Elijah Victor profile photo</figcaption>
+          </figure>
+          <div class="header-content">
+            <h2 id="user-name" data-testid="test-user-name">Elijah Victor</h2>
+            <p class="bio" data-testid="test-user-bio">
+              Passionate front end developer with a knack for creating robust
+              web applications. Skilled in JavaScript, React, and Nextjs. Always
+              eager to learn new technologies and solve complex problems.
+            </p>
+
+            <p
+              class="time"
+              data-testid="test-user-time"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              Time: Loading...
+            </p>
+          </div>
+        </header>
+
+        <!-- social links -->
+        <nav
+          class="social"
+          aria-label="Social links"
+          data-testid="test-user-social-links"
+        >
+          <ul>
+            <li>
+              <a
+                href="https://x.com/vixs101"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-twitter"
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Vixs101"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-github"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/vixs101/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section
+          class="hobbies card-section"
+          aria-labelledby="hobbies-heading"
+          data-testid="test-user-hobbies"
+        >
+          <h3 id="hobbies-heading" class="section-title">Hobbies</h3>
+          <ul>
+            <li data-testid="test-user-hobby-1">
+              Building cool products and providing innovative solutions
+            </li>
+            <li data-testid="test-user-hobby-1">Playing Volleyball</li>
+            <li data-testid="test-user-hobby-1">Listening to good music</li>
+            <li data-testid="test-user-hobby-2">Reading Books</li>
+            <li data-testid="test-user-hobby-3">
+              Watching movies, anime and animations
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="dislikes card-section"
+          aria-labelledby="dislikes-heading"
+          data-testid="test-user-dislikes"
+        >
+          <h3 id="dislikes-heading" class="section-title">Dislikes</h3>
+          <ul>
+            <li data-testid="test-user-dislike-3">Poverty!</li>
+            <li data-testid="test-user-dislike-1">Lies</li>
+            <li data-testid="test-user-dislike-2">Lack of empathy</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <script src="script.js">
+        
+    </script>
+  </body>
+</html>
