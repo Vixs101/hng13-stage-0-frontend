@@ -1,8 +1,3 @@
-That's a fantastic task\! A great README will guide users and reviewers, demonstrating your understanding of the requirements and how you addressed them.
-
-Here is the perfect README in markdown format for your Profile Card project:
-
-```markdown
 # 👤 Profile Card Component (Stage 0 Task)
 
 This project is a small, accessible, and responsive **Profile Card component** built using plain HTML, CSS, and vanilla JavaScript. It fulfills all the core requirements and acceptance criteria for the Stage 0 task, focusing on semantic markup, modern frontend patterns, and robust testability.
@@ -27,10 +22,8 @@ The project follows a standard structure:
 
 .
 ├── index.html          \# The main HTML file containing the Profile Card component.
-├── style.css           \# The CSS file for styling and responsive layout.
+├── index.css           \# The CSS file for styling and responsive layout.
 ├── script.js           \# The vanilla JavaScript file for behavior (e.g., updating the time).
-├── assets/
-│   └── avatar.jpg      \# Placeholder image for the user avatar.
 └── README.md
 
 ````
@@ -79,8 +72,8 @@ You need a modern web browser to view the project.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [YOUR-REPO-LINK]
-    cd profile-card-component
+    git clone https://github.com/Vixs101/hng13-stage-0-frontend
+    cd hng13-stage-0-frontend
     ```
 2.  **Open `index.html`:**
     Simply open the `index.html` file in your preferred web browser. Alternatively, use a local development server extension (like *Live Server* in VS Code) for best results.
