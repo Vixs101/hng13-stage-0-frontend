@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <title>Contact Us - Elijah Victor</title>
+  </head>
+  <body>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <main class="page contactPage">
+      <div class="contactContainer">
+        <header class="contactHeader">
+          <h1>Get in Touch</h1>
+          <p>
+            Have a question or want to work together? Please Fill out the form
+            below and I'll get back to you as soon as possible.
+          </p>
+        </header>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          novalidate
+          aria-labelledby="form-title"
+        >
+          <h2 id="form-title" class="sr-only">Contact Form</h2>
+
+          <div class="formGroup">
+            <label for="fullName">
+              Full Name <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              data-testid="test-contact-name"
+              aria-required="true"
+              aria-describedby="fullName-error"
+              required
+            />
+            <span
+              id="fullName-error"
+              class="error-message"
+              data-testid="test-contact-error-name"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <div class="formGroup">
+            <label for="email">
+              Email Address
+              <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              data-testid="test-contact-email"
+              aria-required="true"
+              aria-describedby="email-error"
+              required
+            />
+            <span
+              id="email-error"
+              class="error-message"
+              data-testid="test-contact-error-email"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <div class="formGroup">
+            <label for="subject">
+              Subject <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              data-testid="test-contact-subject"
+              aria-required="true"
+              aria-describedby="subject-error"
+              required
+            />
+            <span
+              id="subject-error"
+              class="error-message"
+              data-testid="test-contact-error-subject"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <div class="formGroup">
+            <label for="message">
+              Message <span class="required" aria-label="required">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              data-testid="test-contact-message"
+              aria-required="true"
+              aria-describedby="message-error"
+              required
+            ></textarea>
+            <span
+              id="message-error"
+              class="error-message"
+              data-testid="test-contact-error-message"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-button"
+            data-testid="test-contact-submit"
+          >
+            Send Message
+          </button>
+          <div
+            class="success-message"
+            id="successMessage"
+            data-testid="test-contact-success"
+            role="alert"
+            aria-live="polite"
+            style="display: none"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <p>Thank you for your message! I'll get back to you soon.</p>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="contact.js"></script>
+  </body>
+</html>

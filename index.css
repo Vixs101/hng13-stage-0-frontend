@@ -16,16 +16,64 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  padding: 1rem;
+  padding: 5rem 1rem 1rem 1rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
 .page {
   width: 100%;
   max-width: 900px;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile-card {
@@ -36,6 +84,8 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 .profile-header {
@@ -224,6 +274,9 @@ body {
   .profile-header {
     grid-template-columns: 160px 1fr;
     gap: 2rem;
+  }
+  .profile-card {
+    margin-top: 3rem;
   }
 
   .avatar {
