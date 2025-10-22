@@ -1,64 +1,128 @@
-# 👤 Profile Card Component (Stage 0 Task)
+# 👤 Multi-Page Profile Application (Stage 0 & Stage 1)
 
-This project is a small, accessible, and responsive **Profile Card component** built using plain HTML, CSS, and vanilla JavaScript. It fulfills all the core requirements and acceptance criteria for the Stage 0 task, focusing on semantic markup, modern frontend patterns, and robust testability.
+A fully responsive, accessible multi-page web application featuring a profile card, contact form with validation, and reflective about page. Built with semantic HTML, modern CSS, and vanilla JavaScript.
 
 ---
 
 ## ✨ Features
 
-* **Accessible Markup:** Utilizes semantic HTML tags (`<article>`, `<figure>`, `<nav>`, `<section>`, etc.) to ensure a clear document outline and enhanced accessibility.
-* **Fully Responsive Layout:** Implements a mobile-first design using **Flexbox** or **Grid** to ensure the card displays correctly across all common breakpoints (mobile, tablet, desktop).
-* **Real-time Clock:** Displays the current time in milliseconds, updated accurately using JavaScript's `Date.now()`.
-* **Test-Driven Ready:** Every required visible element includes the specified `data-testid` attribute, enabling stable and reliable automated testing.
-* **Best Practices:** Social links are configured to open in a new tab with the required `rel="noopener noreferrer"` attributes.
+### Stage 0 - Profile Card
+
+* **Accessible Markup:** Semantic HTML5 elements (`<article>`, `<figure>`, `<nav>`, `<section>`)
+* **Fully Responsive Layout:** Mobile-first design using Flexbox and Grid
+* **Real-time Clock:** Displays current time in milliseconds using `Date.now()`
+* **Social Links:** External links with proper security attributes
+
+### Stage 1 - New Pages
+
+* **Contact Form:** Full client-side validation with detailed error messages
+* **About Page:** Personal reflections on goals, challenges, and aspirations
+* **Multi-page Navigation:** Fixed navigation bar across all pages
+* **Form Validation:** Real-time validation with accessibility support
+* **Success Feedback:** Clear visual confirmation after successful form submission
 
 ---
 
-## 🏗️ Project Structure
-
-The project follows a standard structure:
+## 🗂️ Project Structure
 
 ```
-
 .
-├── index.html          \# The main HTML file containing the Profile Card component.
-├── index.css           \# The CSS file for styling and responsive layout.
-├── script.js           \# The vanilla JavaScript file for behavior (e.g., updating the time).
-└── README.md
-
-````
+├── index.html          # Profile card (home page)
+├── contact.html        # Contact form page
+├── about.html          # About me/reflections page
+├── index.css           # Global and profile card styles
+├── contact.css         # Contact page specific styles
+├── about.css           # About page specific styles
+├── script.js           # Profile card time display logic
+├── contact.js          # Form validation logic
+└── README.md           # This file
+```
 
 ---
 
-## ⚙️ Technical Requirements & Implementation
+## 🎯 Technical Implementation
 
-### HTML & Accessibility
+### Contact Form Validation
 
-| Content Element | Required `data-testid` | Semantic Tag Suggestion | Implementation Notes |
-| :--- | :--- | :--- | :--- |
-| Profile Card Container | `data-testid="test-profile-card"` | `<article>` | The main wrapper for the component. |
-| Name | `data-testid="test-user-name"` | `<h2>` or similar | Plain text for the user's name. |
-| Short Biography | `data-testid="test-user-bio"` | `<p>` | Paragraph containing the user's bio. |
-| Current Time (ms) | `data-testid="test-user-time"` | `<span>` or `<time>` | Updated via `script.js` with `Date.now()`. |
-| Avatar Image | `data-testid="test-user-avatar"` | `<img>` inside `<figure>` | Includes an appropriate `alt` attribute. |
-| Social Links List | `data-testid="test-user-social-links"` | `<nav>` or `<ul>` | Contains all individual social links. |
-| Hobbies List | `data-testid="test-user-hobbies"` | `<ul>` inside `<section>` | Distinct list of hobbies. |
-| Dislikes List | `data-testid="test-user-dislikes"` | `<ul>` inside `<section>` | Distinct list of dislikes. |
+#### Required Fields & Test IDs
 
-* **Keyboard Navigation:** All interactive elements (links) are keyboard-focusable with clearly visible focus styles.
-* **Image Alt Text:** The avatar image includes a descriptive `alt` attribute for screen readers.
+| Field | Test ID | Validation Rules |
+|-------|---------|------------------|
+| Full Name | `test-contact-name` | Required, cannot be empty |
+| Email | `test-contact-email` | Required, valid email format (<name@example.com>) |
+| Subject | `test-contact-subject` | Required, cannot be empty |
+| Message | `test-contact-message` | Required, minimum 10 characters |
+| Submit Button | `test-contact-submit` | Triggers validation |
+| Error Messages | `test-contact-error-{field}` | Individual error display for each field |
+| Success Message | `test-contact-success` | Shown after successful submission |
 
-### Styling & Responsiveness
+#### Validation Features
 
-* **Layout:** Implemented using **Flexbox** (or **Grid**) for a clean, maintainable, and dynamic layout.
-* **Breakpoints:** The layout transitions smoothly:
-    * **Mobile:** Content stacks vertically.
-    * **Tablet/Desktop:** The avatar is positioned to the left, with text and details to the right for a standard profile presentation.
+- **Real-time validation** on blur and input events
+* **Accessible error messages** linked with `aria-describedby`
+* **Visual indicators** for valid/invalid states
+* **Keyboard navigation** fully supported
+* **Focus management** - automatically focuses first invalid field
 
-### Behavior (JavaScript)
+### About Page Sections
 
-* The `test-user-time` element is dynamically updated using JavaScript to reflect the precise `Date.now()` value in milliseconds. The value updates periodically to maintain accuracy.
-* Social links use `target="_blank"` and `rel="noopener noreferrer"`.
+#### Required Sections & Test IDs
+
+| Section | Test ID | Content |
+|---------|---------|---------|
+| Main Container | `test-about-page` | Wraps entire about page content |
+| Bio | `test-about-bio` | Personal introduction and background |
+| Goals | `test-about-goals` | Program objectives and aspirations |
+| Confidence Areas | `test-about-confidence` | Areas of growth and learning |
+| Future Note | `test-about-future-note` | Reflective message to future self |
+| Extra Thoughts | `test-about-extra` | Additional reflections and closing thoughts |
+
+---
+
+## ♿ Accessibility Features
+
+### ARIA & Semantic HTML
+
+- All form inputs linked to labels with `for` attribute
+* Error messages associated with inputs via `aria-describedby`
+* Invalid states indicated with `aria-invalid`
+* Live regions (`aria-live`) for dynamic error and success messages
+* Proper heading hierarchy (`<h1>`, `<h2>`, `<h3>`)
+* Semantic landmarks (`<main>`, `<nav>`, `<section>`, `<article>`)
+
+### Keyboard Navigation
+
+- All interactive elements are keyboard accessible
+* Tab order follows logical document flow
+* Focus indicators visible on all interactive elements
+* Form submission works with Enter key
+* Skip to content via semantic structure
+
+### Screen Reader Support
+
+- Descriptive alt text for images
+* ARIA labels for navigation regions
+* Success/error announcements via live regions
+* Form field requirements clearly indicated
+
+---
+
+## 📱 Responsive Design
+
+### Breakpoints
+
+- **Mobile:** < 480px (stacked layout, centered content)
+* **Tablet:** 480px - 720px (optimized spacing)
+* **Desktop:** 720px+ (side-by-side layouts, expanded grid)
+* **Large Desktop:** 1000px+ (multi-column profile card)
+
+### Layout Techniques
+
+- Mobile-first approach
+* CSS Grid for complex layouts
+* Flexbox for component arrangement
+* Fluid typography with responsive font sizes
+* Flexible images and media
 
 ---
 
@@ -66,21 +130,170 @@ The project follows a standard structure:
 
 ### Prerequisites
 
-You need a modern web browser to view the project.
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+* No build tools or dependencies required
 
-### Running Locally
+### Local Development
 
-1.  **Clone the repository:**
-    ```bash
+1. **Clone the repository:**
+
+   ```bash
     git clone https://github.com/Vixs101/hng13-stage-0-frontend
     cd hng13-stage-0-frontend
-    ```
-2.  **Open `index.html`:**
-    Simply open the `index.html` file in your preferred web browser. Alternatively, use a local development server extension (like *Live Server* in VS Code) for best results.
+   ```
+
+2. **Open in browser:**
+   * Simply open `index.html` in your browser
+   * Or use a local server (recommended):
+
+     ```bash
+     # Using Python 3
+     python -m http.server 8000
+     
+     # Using Node.js http-server
+     npx http-server
+     ```
+
+3. **Navigate the app:**
+   * Home: `index.html`
+   * Contact: `contact.html`
+   * About: `about.html`
 
 ---
 
-## 📝 Notes for Reviewer
+## 🧪 Testing Guide
 
-This project strictly adheres to the acceptance criteria. The use of the specified `data-testid` attributes ensures the component is fully discoverable for automated testing. Semantic HTML was prioritized throughout the entire component structure.
-````
+### Manual Testing Checklist
+
+#### Profile Card (Stage 0)
+
+- [ ] Avatar image displays correctly
+* [ ] Time updates every second in milliseconds
+* [ ] Social links open in new tabs
+* [ ] All `data-testid` attributes present
+* [ ] Responsive on mobile, tablet, and desktop
+* [ ] Keyboard navigable
+
+#### Contact Form (Stage 1)
+
+- [ ] All fields are required and validated
+* [ ] Email validation accepts valid emails only
+* [ ] Message requires minimum 10 characters
+* [ ] Error messages display below fields
+* [ ] Success message appears after valid submission
+* [ ] Form resets after successful submission
+* [ ] Validation works on blur and input
+* [ ] First invalid field receives focus on submit
+* [ ] All `data-testid` attributes present
+
+#### About Page (Stage 1)
+
+- [ ] All sections present with correct test IDs
+* [ ] Content is well-structured with headings
+* [ ] Responsive layout on all devices
+* [ ] Semantic HTML used throughout
+
+#### Navigation
+
+- [ ] Navigation bar fixed at top
+* [ ] Active page indicator works
+* [ ] Links work correctly between pages
+* [ ] Navigation accessible via keyboard
+
+---
+
+## 🎨 Design Choices
+
+### Visual Theme
+
+- **Dark mode design** with slate blue gradient backgrounds
+* **Glassmorphism effects** with backdrop blur and transparency
+* **Blue accent color** (#60a5fa) for interactive elements
+* **Smooth animations** for hover states and transitions
+* **Card-based layouts** with subtle shadows and borders
+
+### Typography
+
+- System font stack for optimal performance
+* Responsive font sizes using rem units
+* Proper line height for readability
+* Clear visual hierarchy
+
+---
+
+## 📝 Code Quality
+
+### Best Practices
+
+- **Semantic HTML5** throughout
+* **BEM-inspired** class naming conventions
+* **Modular CSS** with separate stylesheets per page
+* **Vanilla JavaScript** - no frameworks required
+* **Comprehensive comments** in code
+* **Consistent formatting** and indentation
+* **No console errors** or warnings
+
+### Performance
+
+- Minimal JavaScript for fast load times
+* Optimized CSS with no redundant rules
+* Efficient selectors and specificity
+* No external dependencies
+
+---
+
+## ✅ Acceptance Criteria Checklist
+
+### Stage 0
+
+- [x] Profile card with all required elements
+* [x] Real-time millisecond clock display
+* [x] Semantic HTML structure
+* [x] All required `data-testid` attributes
+* [x] Fully responsive design
+* [x] Accessible markup
+
+### Stage 1 - Contact Page
+
+- [x] All required form fields with correct test IDs
+* [x] Validation prevents invalid submissions
+* [x] Success message shows only after valid submission
+* [x] Error messages for each field
+* [x] Labels linked to inputs with `for`
+* [x] ARIA associations for errors
+* [x] Fully keyboard accessible
+
+### Stage 1 - About Page
+
+- [x] All required sections with correct test IDs
+* [x] Semantic HTML (main, section, headings)
+* [x] Proper document structure
+* [x] Responsive layout
+
+### General Requirements
+
+- [x] Semantic HTML throughout
+* [x] Accessible (labels, alt text, ARIA)
+* [x] Fully responsive (mobile, tablet, desktop)
+* [x] Keyboard navigable
+* [x] Clean, modular code
+* [x] Comprehensive README
+
+---
+
+## 👨‍💻 Author
+
+**Elijah Victor**
+* Twitter: [@vixs101](https://x.com/vixs101)
+* GitHub: [@Vixs101](https://github.com/Vixs101)
+* LinkedIn: [vixs101](https://www.linkedin.com/in/vixs101/)
+
+---
+
+## 📄 License
+
+This project is part of the HNG internship and is available for educational purposes.
+
+---
+
+**Last Updated:** October 2025
